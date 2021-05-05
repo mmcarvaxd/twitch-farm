@@ -6,10 +6,10 @@ const config = JSON.parse(configText)
 
 const opts = {
     identity: {
-        username: config.username,
-        password: config.password
+        username: process.env.username,
+        password: process.env.password
     },
-    channels: config.channels
+    channels: JSON.parse(process.env.channels)
 };
 
 const client = new tmi.client(opts);
